@@ -45,6 +45,7 @@ public class EmailService {
             String template = templateEngine.process("notificacao", context);
             mimeMessageHelper.setText(template, true);
             javaMailSender.send(mensagem);
+
         } catch (MessagingException | UnsupportedEncodingException e) {
             throw new EmailException("Erro ao enviar o email ", e.getCause());
 
